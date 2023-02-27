@@ -1,0 +1,436 @@
+@import "nullstyle.sass"
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap')
+
+$dark: #333333
+$accent: #66C05D
+$gray: #EFEFEF
+
+body
+	font-family: 'Roboto'
+
+.container
+	max-width: 1140px
+	padding: 0 15px
+	margin: 0 auto
+
+.header
+	position: relative
+
+	&::after
+		content: ''
+		position: absolute
+		bottom: 80px
+		width: 100%
+		height: 1px
+		background-color: $gray
+
+.menu
+	padding: 16px 0
+	background: $gray
+
+	&__list
+		display: flex
+		justify-content: center
+		align-items: center
+		gap: 30px
+	&__item
+	&__link
+		font-size: 14px
+		color: $dark
+
+.second-line
+	display: flex
+	justify-content: space-between
+	align-items: center
+	padding: 20px 0
+
+.second-line__logo
+	display: flex
+	align-items: center
+	img
+		margin-right: 20px
+
+.second-line__name
+	font-weight: 700
+	font-size: 36px
+	line-height: 42px
+	letter-spacing: 0.1em
+	color: $accent
+
+.second-line__contact
+	display: flex
+	justify-content: flex-end
+	align-items: center
+	gap: 40px
+	a
+		color: #000
+		font-size: 16px
+		line-height: 19px
+
+.callback
+	width: 170px
+	height: 40px
+	background: #FFFFFF
+	border: 2px solid $accent
+	border-radius: 40px
+	font-size: 14px
+
+.main-menu
+	padding: 30px 0
+	.main-menu__list
+		gap: 40px
+	.main-menu__link
+		font-size: 16px
+		line-height: 19px
+
+.burger
+	display: none
+.burger__btn
+	overflow: hidden
+	width: 40px
+	height: 40px
+	background: transparent
+	border-radius: 5px
+	cursor: pointer
+	position: relative
+
+.burger__btn span
+	display: block
+	position: absolute
+	background: $accent
+	width: 30px
+	height: 4px
+	top: 18px
+	left: 5px
+	right: 5px
+	transition-duration: .3s
+
+.burger__btn span:after,
+.burger__btn span:before
+	content: ''
+	display: block
+	position: absolute
+	background: $accent
+	width: 100%
+	height: 4px
+	transition: .3s
+
+.burger__btn span:before
+	bottom: -9px
+
+.burger__btn span:after
+	top: -9px
+
+.close span
+	background: none
+
+.close span:after
+	top: 0
+	transform: rotate(45deg)
+
+.close span:before
+	bottom: 0
+	transform: rotate(-45deg)
+
+.menu-mobile
+	position: absolute
+	background-color: $gray
+	padding: 10px 20px 40px
+	border-radius: 0 0 30px 0
+	overflow: hidden
+	top: 119px
+	left: 0
+	width: 80%
+	max-width: 300px
+	color: $dark
+	animation: menu-mobile .5s ease 1 alternate
+	h3
+		margin: 35px 0
+		font-size: 20px
+
+@keyframes menu-mobile
+	0%
+		left: -350px
+	100%
+		left: 0
+		
+
+.menu-mobile__item
+	margin-bottom: 15px
+	&::last-child
+		margin-bottom: 0
+.menu-mobile__link
+	color: inherit
+	font-size: 16px
+
+.none
+	display: none
+
+.sale
+	background: url(../img/sale.png) center/cover no-repeat
+	padding: 192px 0
+	color: #FFFFFF
+	&__grope
+		max-width: 310px
+	&__title
+		font-weight: 700
+		font-size: 48px
+		line-height: 56px
+		margin-bottom: 50px
+	&__text
+		font-size: 14px
+		line-height: 20px
+		margin-bottom: 50px
+	&__btn
+		width: 170px
+		height: 40px
+		background: $accent
+		border: 2px solid #FFFFFF
+		border-radius: 40px
+		font-size: 14px
+		line-height: 16px
+		text-align: center
+		letter-spacing: 0.05em
+		color: #FFFFFF
+
+.special-offer
+	background-color: $gray
+	padding: 70px 0
+	&__title
+		font-weight: 700
+		font-size: 24px
+		line-height: 28px
+		margin-bottom: 16px
+		display: flex
+		justify-content: space-between
+		align-items: flex-start
+	&__row
+		display: flex
+		justify-content: center
+		gap: 2.7%
+	&__item
+		padding: 25px 2.7%
+		background: #fff
+		display: flex
+		flex-direction: column
+		align-items: center
+		flex: 0 1 255px
+		gap: 20px
+		text-align: center
+	&__img
+		width: 125px
+	&__text
+		font-size: 14px
+		line-height: 20px
+		color: $dark
+	&__price
+		font-weight: 500
+		font-size: 21px
+		line-height: 25px
+		letter-spacing: 0.05em
+		color: #000000
+	&__btn
+		width: 130px
+		height: 35px
+		background: $accent
+		border-radius: 30px
+		font-size: 14px
+		line-height: 16px
+		letter-spacing: 0.05em
+		color: #FFFFFF
+
+.subscribe-invitation
+	padding: 40px 0 132px
+	background: $gray
+
+.subscribe-invitation__row
+	display: flex
+	justify-content: center
+	gap: 30px
+	flex-wrap: wrap
+
+.subscribe,
+.invitation
+	padding: 35px 40px
+	background-color: $accent
+	flex: 0 1 540px
+
+.subscribe
+	position: relative
+	&::before
+		content: ''
+		display: block
+		width: 140px
+		height: 107px
+		position: absolute
+		top: 50%
+		transform: translateY(-50%)
+		right: 45px
+		background-image: url(../img/group.svg)
+		background-repeat: no-repeat
+
+.subscribe__email
+	width: 225px
+	height: 35px
+	background: #FFFFFF
+	border-radius: 30px
+	padding: 9px 25px
+	font-size: 14px
+	line-height: 16px
+	&:placeholder-shown
+		color: #C4C4C4
+
+.subscribe__body,
+.invitation__body
+	color: #FFFFFF
+	display: flex
+	flex-direction: column
+	gap: 25px
+	max-width: 250px
+.invitation__body
+	max-width: 215px
+
+.subscribe__subtitlee,
+.invitation__subtitlee
+	font-weight: 700
+	font-size: 18px
+	line-height: 21px
+
+.subscribe__text,
+.invitation__text
+	font-size: 14px
+	line-height: 20px
+
+.invitation__body
+.invitation__btn
+	width: 170px
+	height: 35px
+	background: $accent
+	border: 2px solid #FFFFFF
+	border-radius: 30px
+	font-size: 14px
+	line-height: 16px
+	text-align: center
+	color: #FFFFFF
+
+.footer
+	background-color: $gray
+	&__row
+		background: #fff
+		padding: 38px 0
+
+.contacts
+	display: flex
+	justify-content: space-between
+	align-items: center
+	gap: 30px
+
+.social-media
+	&__list
+		display: flex
+		gap: 20px
+	&__link
+		display: block
+		border: 2px solid $accent
+		border-radius: 50%
+		width: 45px
+		height: 45px
+		background: center no-repeat
+	&__text
+		width: 1px
+		height: 1px
+		clip: rect(1px, 1px, 1px, 1px)
+		position: absolute
+
+.icon__youtube
+	background-image: url(../img/vector1.svg)
+.icon__vk
+	background-image: url(../img/group2.svg)
+.icon__facebook
+	background-image: url(../img/facebook-logo3.svg)
+.icon__instagram
+	background-image: url(../img/instagram4.svg)
+
+.contacts__row
+	display: flex
+	justify-content: space-between
+	align-items: center
+	flex: 0 1 670px
+	span
+		font-size: 14px
+		line-height: 16px
+		flex: 0 1 auto
+	a
+		color: #000
+		font-size: 16px
+		line-height: 19px
+		margin-right: 40px
+
+.copyright
+	display: flex
+	justify-content: space-between
+	padding: 25px 0
+	span
+		font-size: 12px
+		line-height: 14px
+		color: #828282
+		font-style: normal
+
+@media ( max-width: 900px )
+	.subscribe-invitation
+		padding: 0 0 70px
+	.contacts__row
+		flex-wrap: wrap
+		span
+			order: 1
+		a
+			order: 3
+			flex: 1 1 50%
+			font-size: 14px
+		.contacts__btn
+			order: 2
+	.copyright
+		flex-direction: column
+		align-items: center
+		text-align: center
+
+@media ( max-width: 710px )
+	.header:after,
+	.menu,
+	.second-line__contact,
+	.main-menu
+		display: none
+
+	.burger
+		display: block
+
+	.sale
+		padding: 50px 0
+	.special-offer
+		padding: 20px 0
+		&__row
+			flex-wrap: wrap
+			gap: 30px
+		&__item
+			width: calc(100% - 30px) / 2
+
+	.subscribe-invitation
+		padding-bottom: 20px
+	.footer__row
+		padding: 15px 0
+	.contacts__row
+		gap: 10px
+		flex-direction: column
+		span
+			order: 1
+		a
+			order: 2
+			margin: 0
+		.contacts__btn
+			order: 3
+
+@media ( max-width: 560px )
+	.contacts
+		justify-content: center
+	.contacts__row
+		display: none
